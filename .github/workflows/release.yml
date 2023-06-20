@@ -1,12 +1,12 @@
 name: Release
 
 permissions:
-  id-token: write
   contents: write
 
 on:
   push:
-    branches: ["zyaoshen-release"]
+    tags:
+      - v[0-9]+.*
 
 jobs:
   create-release:
