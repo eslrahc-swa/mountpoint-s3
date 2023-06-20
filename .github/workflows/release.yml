@@ -1,12 +1,12 @@
 name: Release
 
 permissions:
-  id-token: write
   contents: write
 
 on:
   push:
-    branches: ["zyaoshen-release"]
+    tags:
+      - v[0-9]
 
 jobs:
   create-release:
@@ -28,6 +28,6 @@ jobs:
         with:
           # (required) Comma-separated list of binary names (non-extension portion of filename) to build and upload.
           # Note that glob pattern is not supported yet.
-          bin: ...
+          bin: mount-s3 
           # (required) GitHub token for uploading assets to GitHub Releases.
           token: ${{ secrets.GITHUB_TOKEN }}
