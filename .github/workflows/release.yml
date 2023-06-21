@@ -21,5 +21,3 @@ jobs:
           draft: true
           title: "$prefix $version"
           token: ${{ secrets.GITHUB_TOKEN }}
-
-
